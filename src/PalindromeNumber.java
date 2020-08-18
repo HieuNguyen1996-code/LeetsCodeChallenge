@@ -2,12 +2,9 @@
 public class PalindromeNumber {
 	public boolean isPalindrome(int x) {
 		
-		//convert x to a String 
-		//check to see if it is Palindrome
-		//PalindromeNumber is the number that switch
-		//the beginning with the end and get the same result
-		//Since the negative number does not have Palindrome
-		//We will assume there is no negative Palindrome number
+		//Reversing the number 
+		//checking if the reverse number equal to the input
+		//then print out solution
 		
 		// if the number if negative return false;
 		
