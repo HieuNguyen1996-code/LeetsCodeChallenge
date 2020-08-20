@@ -4,18 +4,20 @@ import java.util.Map;
 public class TestSolution {
 
 	public static void main(String[] args) {
-		String s = "XXXX";
+		String s = "IV";
 
 		HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
 
 		
 		hm.put('I', 1);
-		hm.put('X', 5);
+		hm.put('V', 5);
+		hm.put('X', 10);
 		hm.put('L', 50);
 		hm.put('C', 100);
 		hm.put('D', 500);
 		hm.put('M', 1000);
-		int romanTotal = hm.get(s.charAt(s.length() - 1));
+		int len = s.length();
+		int romanTotal = hm.get(s.charAt(len - 1));
 
 		
 		for(int i= s.length() -2 ; i >=  0; i--) {

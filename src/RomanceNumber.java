@@ -5,7 +5,7 @@ public class RomanceNumber {
 		
 		//check to see if the String is empy; 
 		if(s.length() ==0 || s == null) {
-			
+			return -1;
 		}
 		HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
 
