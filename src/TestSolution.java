@@ -4,7 +4,7 @@ import java.util.Map;
 public class TestSolution {
 
 	public static void main(String[] args) {
-		String s = "IV";
+		String s = "I";
 
 		HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
 
