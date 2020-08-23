@@ -4,34 +4,64 @@ import java.util.Map;
 public class TestSolution {
 
 	public static void main(String[] args) {
-		String s = "I";
-
-		HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
-
 		
-		hm.put('I', 1);
-		hm.put('V', 5);
-		hm.put('X', 10);
-		hm.put('L', 50);
-		hm.put('C', 100);
-		hm.put('D', 500);
-		hm.put('M', 1000);
-		int len = s.length();
-		int romanTotal = hm.get(s.charAt(len - 1));
-
+		int[] arr = {1,8,6,2,5,4,8,3,7};
+		ContainMostWater numbers = new ContainMostWater();
+		System.out.println(numbers.fasterMaxArea(arr));
 		
-		for(int i= s.length() -2 ; i >=  0; i--) {
-			if(hm.get(s.charAt(i)) >=hm.get(s.charAt(i+1)) ) {
-				romanTotal = romanTotal + hm.get(s.charAt(i));
-			} 
-			else romanTotal = romanTotal - hm.get(s.charAt(i));
-			 
+	}
+   
+	public static int findNumberString(String s) {
+		 
+		//num*10 + s.charAt(current);
+		long nums = 0;
+			int count =0;
+			char[] charsNumbers = s.toCharArray();
+			StringBuilder stringNumbers= new StringBuilder();
+			int  current = 0;
+			
+			if(s.length() ==0||s == null || Character.isAlphabetic(s.charAt(current))) {
+				return 0;
+			}
+			//1aa1234asd
+			while(current < s.length()) {
+				if(Character.isAlphabetic(s.charAt(current))) {
+					break;
+				}
+				
+				if(s.charAt(current) == '-' || s.charAt(current) == '+') {
+					stringNumbers.append(s.charAt(current));
+					
+					
+				}
+				
+				
+				if(Character.isDigit(s.charAt(current))) {
+					stringNumbers.append(s.charAt(current));
+					nums = Long.parseLong(stringNumbers.toString());  
+					
+					if(nums<Integer.MIN_VALUE ) {
+						return Integer.MIN_VALUE ;
+					}
+					if(nums > Integer.MAX_VALUE) {
+						return Integer.MAX_VALUE;
+					}
+					
+				}
+				if(s.charAt(current) == '.') {
+						return  (int)nums;
+					}
+				
+				
+
+				current++;
+			}
+			
+			
+			
+			
+			
+			return (int)nums;
 			
 		}
-		System.out.print(romanTotal);
-
-
-
 	}
-	
-}
