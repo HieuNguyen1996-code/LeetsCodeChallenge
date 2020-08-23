@@ -5,9 +5,7 @@ public class TestSolution {
 
 	public static void main(String[] args) {
 		
-		int[] arr = {1,8,6,2,5,4,8,3,7};
-		ContainMostWater numbers = new ContainMostWater();
-		System.out.println(numbers.fasterMaxArea(arr));
+	
 		
 	}
    
