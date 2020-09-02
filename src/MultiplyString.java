@@ -4,14 +4,16 @@ public class MultiplyString {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String num1 = "55";
-		String num2 = "67";
+		String num1 = "23";
+		String num2 = "2";
 		System.out.print(multiply(num1,num2));
 	}
 	
 	public static String multiply(String num1, String num2) {
-		if(num1 == null|| num1.length() == 0 || num1.length() > 110  ||
-				num2 == null|| num2.length() == 0 || num2.length() > 110) {
+		
+		if(num1.length() == 0 || num1 == null
+				|| num2.length() == 0 || num2 == null ) {
+			return null;
 			
 		}
 		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
@@ -25,28 +27,47 @@ public class MultiplyString {
 		map.put('7',7);
 		map.put('8',8);
 		map.put('9',9);
-		
+
 		int number1 = 0;
 		int number2 = 0;
 		int mult = 0;
+		int lastDigit = 0;
 		int remainder = 0;
-		String stringNumber1 = "";
+		int count = 1;
+		String copyResult = "";
+
+		String result = "";
 			
 		
 		
-		String resultMultiply = String.valueOf("");
+		
 		for(int i = num1.length() -1; i>=0; i--) {
+
 			for(int j = num2.length() -1; j >= 0; j--) {
+
 				number1 = map.get(num1.charAt(i));
 				number2 = map.get(num2.charAt(j));
+
+				mult = (number1*number2) + remainder;
+				remainder = mult/10; 
+				lastDigit = mult%10;
 				
-				mult = (number1*number2);
-				remainder = mult/10;
-				resultMultiply = String.valueOf(mult%10) + resultMultiply;
+				if(j ==0) {
+
+					result =  Integer.toString(remainder) + Integer.toString(lastDigit) + result;
+				}else 
+					result = Integer.toString(lastDigit) + result;
 				
-				mult = 0;
+				
+				 
 				
 			}
+
+			
+			copyResult = result;
+			result = "";
+			System.out.println(copyResult);
+			
 		}		
 		
 		
