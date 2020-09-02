@@ -31,7 +31,9 @@ public class MultiplyString {
 		int mult = 0;
 		int remainder = 0;
 		String stringNumber1 = "";
-
+			
+		
+		
 		String resultMultiply = String.valueOf("");
 		for(int i = num1.length() -1; i>=0; i--) {
 			for(int j = num2.length() -1; j >= 0; j--) {
