@@ -26,11 +26,7 @@ public class RemoveDuplicateNumber {
 				nums[result] = nums[count];
 			}
 		}
-		
-		for(int i =0; i <= result; i++) { 
-			System.out.println(nums[i]);
-		}
-		
+	
 		return result+1;
 	}
 
