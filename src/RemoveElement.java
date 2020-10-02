@@ -4,7 +4,7 @@ public class RemoveElement {
 	public static void main (String[] args ) {
 		int[] nums = {
 				0,1,2,2,3,0,4,2
-				// 0 0 1 4 3  2 2  2
+				// 0 0 1 3 4 2 2 2
 		};
 		System.out.println(removeElement(nums, 2));
 		
@@ -25,12 +25,10 @@ public class RemoveElement {
 			
 			count++; 
 		}
-		for(int index: nums) {
-			System.out.print(nums[index] + " ");
-		}
 		result = nums.length - result;
 		
 		return result;
 	}
 
 }
+
